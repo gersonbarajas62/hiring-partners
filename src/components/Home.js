@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import App from './App';
 
 class Home extends Component {
@@ -53,4 +53,4 @@ class Home extends Component {
     }
   }
 
-  export default Home;
+  export default Home;*/

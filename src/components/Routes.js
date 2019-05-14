@@ -1,9 +1,9 @@
-import React from 'react';
+/*import React from 'react';
 import { Route, Router } from 'react-router-dom';
 import Home from './Home.js';
 import CallBack from './CallBack.js';
 import Auth from './auth';
-
+import history from './history';
 
 const auth = new Auth();
 
@@ -26,4 +26,4 @@ const Routes = () => (
   </Router>
 );
 
-export default Routes;
+export default Routes;*/
