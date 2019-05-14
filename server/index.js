@@ -1,5 +1,6 @@
 const path = require('path');
 
+
 module.exports = {
   entry: ['./client/src/Index.js'],
   output: {
