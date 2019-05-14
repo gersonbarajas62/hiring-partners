@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Callback = () => (
+const CallBack = () => (
   <div className="container">
     <h4>Loading...</h4>
   </div>
 );
 
-export default Callback
+export default CallBack
