@@ -3,9 +3,8 @@ import loading from './loading.svg';
 
 class Callback extends Component {
   render() {
-    const style = //...
-
-    return (
+  
+    return(
       <div style={style}>
         <img src={loading} alt="loading"/>
       </div>
