@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
-
+import auth from './Auth.js'
+//import './App.css';
 
 class App extends Component {
   goTo(route) {
@@ -43,6 +44,7 @@ class App extends Component {
             {
               !isAuthenticated() && (
                   <Button
+                    id="qsLoginBtn"
                     bsStyle="primary"
                     className="btn-margin"
                     onClick={this.login.bind(this)}
@@ -54,6 +56,7 @@ class App extends Component {
             {
               isAuthenticated() && (
                   <Button
+                    id="qsLogoutBtn"
                     bsStyle="primary"
                     className="btn-margin"
                     onClick={this.logout.bind(this)}

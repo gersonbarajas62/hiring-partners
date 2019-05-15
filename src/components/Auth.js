@@ -1,12 +1,19 @@
 import history from './history';
+import auth0 from 'auth0-js';
+import { AUTH_CONFIG } from './auth0-Variables.js';
 
-// ...
 export default class Auth {
   accessToken;
   idToken;
   expiresAt;
 
-  // ...
+  auth0 = new auth0.WebAuth({
+    domain: AUTH_CONFIG.domain,
+    clientID: AUTH_CONFIG.clientId,
+    redirectUri: AUTH_CONFIG.callbackUrl,
+    responseType: 'token id_token',
+    scope: 'openid'
+  });
 
   constructor() {
     this.login = this.login.bind(this);
@@ -16,6 +23,10 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
+  }
+
+  login() {
+    this.auth0.authorize();
   }
 
   handleAuthentication() {
@@ -42,7 +53,7 @@ export default class Auth {
     // Set isLoggedIn flag in localStorage
     localStorage.setItem('isLoggedIn', 'true');
 
-    // Set the time that the Access Token will expire at
+    // Set the time that the access token will expire at
     let expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
     this.accessToken = authResult.accessToken;
     this.idToken = authResult.idToken;
